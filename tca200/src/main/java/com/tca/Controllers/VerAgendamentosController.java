@@ -24,10 +24,7 @@ import javafx.util.Callback;
 
 import java.io.IOException;
 import java.sql.Connection;
-//import java.sql.PreparedStatement;
-//import java.sql.ResultSet;
 import java.sql.SQLException;
-//import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
@@ -123,11 +120,10 @@ public class VerAgendamentosController {
     }
 
     private void mostrarMotivoCompleto(Agendamento agendamento) {
-        // Criar um pop-up simples para exibir o motivo completo
         Alert alert = new Alert(AlertType.INFORMATION);
         alert.setTitle("Motivo Completo");
         alert.setHeaderText("Motivo do Agendamento:");
-        alert.setContentText(agendamento.getMotivoConsulta());  // Exibe o motivo completo
+        alert.setContentText(agendamento.getMotivoConsulta());
     
         alert.showAndWait();
     }
@@ -159,7 +155,6 @@ public class VerAgendamentosController {
             }
         });
     
-        // Configura as outras colunas (sem alteração)
         nomeDonoColumn.setCellValueFactory(cellData -> {
             Pet pet = cellData.getValue().getPet();
             Dono dono = (pet != null) ? pet.getDono() : null;
